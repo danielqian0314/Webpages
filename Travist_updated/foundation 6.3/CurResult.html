@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Travist - Currency - Calculation Result</title>
+</head>
+<body>
+<!-- Compressed CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+  <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+  <script>var __adobewebfontsappname__="dreamweaver"</script>
+  <script src="http://use.edgefonts.net/cabin-sketch:n4:default;alexa-std:n4:default.js" type="text/javascript"></script>
+
+  </head>
+  <body>	
+  
+  	<!-- Top Bar with off canvas-->
+	<div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    
+        <!-- off-canvas title bar for 'small' screen -->
+        <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+          <!-- left title bar -->
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <span class="title-bar-title">Travist</span>
+          </div>
+          <!-- /left title bar -->
+          <!-- right title bar -->
+          <div class="title-bar-right">
+            <span class="title-bar-title">Contact us</span>
+            <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+          </div>
+          <!-- /right title bar -->
+        </div>
+        <!-- /off-canvas title bar for 'small' screen -->
+    
+        <!-- off-canvas left menu -->
+        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+          <ul class="vertical dropdown menu" data-dropdown-menu>
+            <li><a href="index.html" ><i class="fi-home"></i>Home</a></li>
+            <hr>
+            <li><a href="budget.html"><i class="fi-clipboard-pencil"></i>Cost Estimate</a></li>
+            <hr>
+            <li><a href="airline.html" class="is-active"><i class="fi-web"></i>Airline</a></li>
+            <hr>
+            <li><a href="hotel.html"><i class="fi-key"></i>Hotel</a></li>
+            <hr>
+            <li><a href="rate.html"><i class="fi-euro"></i>Currency Rate</a></li>
+            <hr>
+            <li><a href="agency.html"><i class="fi-compass"></i>Agency</a></li>
+            <hr>
+            <li><a href="insurance.html"><i class="fi-lock"></i>Insurance</a></li>
+            
+          </ul>
+        </div>
+        <!-- /off-canvas left menu -->
+    
+        <!-- off-canvas right menu -->
+        <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
+          <ul class="vertical dropdown menu" data-dropdown-menu>
+            <li><a href="right_item_1"><i class="fi-social-facebook"></i>Facebook</a></li>
+            <li><a href="right_item_2"><i class="fi-social-twitter"></i>Twitter</a></li>
+            <li><a href="right_item_3"><i class="fi-social-google-plus"></i>Google+</a></li>
+            <li><a href="right_item_3"><i class="fi-mail" style="color:brown; font-size:36px"></i>E-mail</a></li>
+          </ul>
+        </div>
+         <!-- /off-canvas right menu -->
+         
+     <!--header with subnav-->    
+    <header class="header show-for-medium">
+    <h1 class="headline"><img src="logo.png" width="290" height="105"></img></h1>
+    <p><blockquote>Your Personal Travel Assitant</blockquote></p>
+    <ul class="header-subnav">
+    <li><a href="index.html" ><i class="fi-home"></i><p style="font-size:10px">Home</p></a></li>
+            
+            <li><a href="budget.html" ><i class="fi-clipboard-pencil"></i><p style="font-size:10px">Cost Estimate</p></a></li>
+           
+            <li><a href="airline.html"><i class="fi-web"></i><p style="font-size:10px">Airline</p></a></li>
+            
+            <li><a href="hotel.html"><i class="fi-key"></i><p style="font-size:10px">Hotel</p></a></li>
+            
+            <li><a href="rate.html" class="is-active"><i class="fi-euro"></i><p style="font-size:10px">Currency Rate</p></a></li>
+            
+            <li><a href="agency.html"><i class="fi-compass"></i><p style="font-size:10px">Agency</p></a></li>
+         
+        <li><a href="insurance.html"><i class="fi-lock"></i><p style="font-size:10px">Insurance</p></a></li>
+    </ul>
+    </header>
+  <!--/header with subnav--> 
+    
+        <!-- original content goes in this container -->
+		<div class="off-canvas-content" data-off-canvas-content>
+			<div class="row column">
+            
+				<br>
+                <!-- breadcrumbs -->
+				<nav aria-label="You are here:" role="navigation">
+ 					<ul class="breadcrumbs">
+						<li><a href="index.html">Home</a></li>
+                        <li> <a href="rate.html">Currency Rate</a></li>
+                        <li>
+                          <span class="show-for-sr">Current: </span> Currency Result
+                        </li>
+					</ul>
+                </nav>
+                <!-- /breadcrumbs -->
+        <h1>Calculation Result</h1>
+        
+    </header><br/><br/>
+	<!-- result -->
+    <script type = "text/javascript">
+        //To get the url. The expressions to display are contained in the url.
+        var url = location.search;
+        //What we want is just the value of the last parameter, the "result". So we have to find the position of "=" last exists.
+        var cut = url.lastIndexOf("=") + 1;
+        //After finding the position of the last "=", we cut the url and keep the value.
+        var displayPrimary = url.substring(cut);
+        //Replace the expression "%0D%0A" to "\n".
+        var displayFixed = displayPrimary.replace(/%0D%0A/g, "<br/>");
+        //Decode the url.
+        //Since the expression of "%0D%0A" will be vanished after decoding and will not turn to "\n", so we have to do this at the upper step.
+        var displayDecode = decodeURIComponent(displayFixed);
+        //Replace "+" to space " ". This cannot be done by decoding.
+        var displayFinal = displayDecode.replace(/[+]/g, " ");
+        //Display the final expression we want.
+        document.write(displayFinal);
+        document.write('<br/><br/>' + '<a href = "rate.html"><i class="fi-arrow-left"></i> Click here to return</a>');
+    </script>
+</body>
+</html>
